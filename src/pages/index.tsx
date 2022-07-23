@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 //utils
-import { Movie } from '../typings'
+import { Movie } from '../../typings'
 import requests from '../utils/requests'
 
 // components
@@ -34,13 +34,19 @@ const Home = ({
 
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
+      {/* web head */}
       <Head>
         <title>Home - Net</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* top header includes all navs, logo, search and user auth link */}
       <Header />
+
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
+        {/* top background banner includes the banner info and play, info btn */}
         <Banner netflixOriginals={netflixOriginals} />
+
+        {/* row for different category movies  */}
         <section className='md:space-y-24'>
           <Row title="Trending Now" movies={trendingNow} />
           <Row title="Top Rated" movies={topRated} />

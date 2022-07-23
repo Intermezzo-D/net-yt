@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import Thumbnail from './Thumbnail'
 
 // types
-import { Movie } from '../typings'
+import { Movie } from '../../typings'
 
 // styles
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
@@ -18,6 +18,10 @@ function Row({ title, movies }: Props) {
   const rowRef = useRef<HTMLDivElement>(null)
   const [isMoved, setIsMoved] = useState(false)
 
+  /**
+   * control the row scrolls horizontally
+   * @param direction
+   */
   const handleClick = (direction: string) => {
     setIsMoved(true)
 
