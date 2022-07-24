@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { BellIcon, SearchIcon } from '@heroicons/react/solid'
 
+// hooks
+import useAuth from '../hooks/useAuth'
+
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-
+  const { logout } = useAuth()
   // check if the screen is at top, if user scrolls down the page, top navbar's backgroud color would become black
   useEffect(() => {
     const handleScroll = () => {
